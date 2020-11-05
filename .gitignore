@@ -1,10 +1,35 @@
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+*.class
+*.iml
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.rar
+*.via
+*.tmp
+*.err
+mvnw
+*.cmd
+
+
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# IntelliJ IDEA Files
+.idea/*
+*.ipr
+*.iws
+*.ids
+*.project
+*.classpath
+
+# maven package default input path
+target/*
