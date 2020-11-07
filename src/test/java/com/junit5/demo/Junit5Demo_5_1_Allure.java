@@ -1,34 +1,37 @@
 /**
- * projectName: Junit5Demo1104
- * fileName: Junit5Demo_1_1_Base.java
- * packageName: com.junit5.demo
- * date: 2020-11-04 8:40 下午
+ * projectName: Junit5Demo
+ * fileName: Fixtures.java
+ * packageName: com.junit5
+ * date: 2020-11-07 2:24 下午
  */
 package com.junit5.demo;
 
 import com.util.Calculator;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-/**
- * 基础脚本，分别执行了加减乘除、计数器操作，并打印了结果。
- * 1、进行了优化：添加自动断言，解决了需要人工检查结果的问题。
- * 2、进行了优化：使用Junit5提供的assertALL进行断言，增加了脚本的容错性。
- */
 
 /**
  * @version: V1.0
  * @author: kuohai
- * @className: Junit5Demo_1_1_Base
- * @packageName: com.junit5.demo
- * @description: 基础脚本
- * @data: 2020-11-04 8:40 下午
+ * @className: Fixtures
+ * @packageName: com.junit5
+ * @description: Fixtrure演练
+ * @data: 2020-11-07 2:24 下午
  **/
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class Junit5Demo_2_1_AssertAll {
+@Epic("Epic 计算器项目")
+@Feature("Feature 冒烟测试用例")
+public class Junit5Demo_5_1_Allure {
     @Test
     @Order(1)
+    @Description("Description")
+    @Story("Story 加法测试")
+    @DisplayName("DisplayName 加法测试")
+    @Severity(SeverityLevel.BLOCKER)
+    @Issue("www.baidu.com")
+    @Link(name = "Link 社区贴" ,type = "mylink", url ="https://ceshiren.com/t/topic/7718")
     public void addTest(){
         int result01 = Calculator.add(4,2);
         System.out.println(result01);
@@ -38,16 +41,18 @@ public class Junit5Demo_2_1_AssertAll {
 
         int result03 = Calculator.add(6,2);
         System.out.println(result03);
+
         assertAll("计算结果校验： ",
                 ()-> assertEquals(6,result01),
                 ()-> assertEquals(6,result02),
                 ()-> assertEquals(7,result03)
-                );
+        );
     }
     @Test
     public void subTractTest(){
         int result = Calculator.subtract(4,2);
         System.out.println(result);
+        Allure.addAttachment("pic","image/png",this.getClass().getResourceAsStream("/Users/xiaolong/JavaWorkSpace/Hogwarts/junit5/live/Junit5Demo1104/src/main/resources/pic01.png"),".png");
         assertEquals(2,result);
 
     }
@@ -81,5 +86,4 @@ public class Junit5Demo_2_1_AssertAll {
         System.out.println(result);
         assertEquals(4,result);
     }
-
 }
