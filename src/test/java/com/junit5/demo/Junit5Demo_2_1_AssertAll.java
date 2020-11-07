@@ -11,11 +11,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-/**
- * 基础脚本，分别执行了加减乘除、计数器操作，并打印了结果。
- * 1、进行了优化：添加自动断言，解决了需要人工检查结果的问题。
- * 2、进行了优化：使用Junit5提供的assertALL进行断言，增加了脚本的容错性。
- */
+
 
 /**
  * @version: V1.0

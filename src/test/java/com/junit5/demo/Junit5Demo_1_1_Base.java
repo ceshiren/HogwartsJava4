@@ -8,10 +8,7 @@ package com.junit5.demo;
 
 import com.util.Calculator;
 import org.junit.jupiter.api.Test;
-/**
- * 基础脚本，分别执行了加减乘除、计数器操作，并打印了结果
- *
- */
+
 
 /**
  * @version: V1.0
