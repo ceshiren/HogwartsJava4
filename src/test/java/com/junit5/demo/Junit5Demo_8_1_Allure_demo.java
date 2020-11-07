@@ -7,16 +7,7 @@ package com.junit5.demo; /**
 
 
 
-/**
- * 基础脚本、分别执行了加、减、乘、除、计数方法，并对结果进行了打印
- * 1、进行了优化，添加自动断言，无需人工对结果进行判断。
- * 2、进行了优化：使用Junit5提供的Java 8 lambdas的assertAll断言方法，增加了脚本的容错性。
- * 3、通过assertThat引用三方Matcher库，大大增加了断言的灵活性。
- * 4、进行了优化，使用类的@TestMethodOrder和方法的@Order注解对方法执行顺序进行顺序设置。
- * 5、进行了优化，通过@BeforeEach在每个方法前进行结果清零操作
- * 6、通过suit注解可以在不改变原脚本的基础上，灵活的选取被执行测试方法。
- * 7、通过Junit提供的并发功能，测试被测逻辑在多线程下的线程安全问题
-**/
+
 
 import com.util.Calculator;
 import io.qameta.allure.*;
