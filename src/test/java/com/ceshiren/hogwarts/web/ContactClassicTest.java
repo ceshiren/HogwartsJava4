@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
@@ -99,6 +100,17 @@ public class ContactClassicTest {
         content = driver.findElement(By.cssSelector(".js_party_info")).getText();
         System.out.println(content);
         assertTrue(content.contains("无任何成员"));
+    }
+
+    @Test
+    void addDepart() throws InterruptedException {
+        click(By.id("menu_contacts"));
+        click(By.linkText("添加"));
+        click(By.linkText("添加部门"));
+        click(By.linkText("选择所属部门"));
+        Thread.sleep(2000);
+        click(By.linkText("霍格沃兹学院"));
+        click(By.linkText("销售部"));
     }
 
 

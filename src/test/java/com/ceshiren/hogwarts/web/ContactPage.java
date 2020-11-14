@@ -28,7 +28,7 @@ public class ContactPage extends BasePage {
     public ContactPage searchDepart(String departName){
         //po原则1 用公共方法代表页面所提供的功能
         //po原则3  通常不要在po方法内添加断言
-        sendKeys(By.id("memberSearchInput"), "销售部");
+        sendKeys(By.id("memberSearchInput"), departName);
         String content = driver.findElement(parterInfo).getText();
         System.out.println(content);
         click(By.cssSelector(".ww_icon_AddMember"));
@@ -42,4 +42,25 @@ public class ContactPage extends BasePage {
         return content;
     }
 
+    public ContactPage addDepart(String departName) {
+//        todo: 添加部门
+
+//        click(By.cssSelector("#js_contacts344 > div > div.member_colLeft > div > div.member_colLeft_top.member_colLeft_top_BorderBottom > a > i"));
+//        click(By.cssSelector(".member_colLeft_top_addBtn"));
+        click(By.linkText("添加"));
+        click(By.linkText("添加部门"));
+        sendKeys(By.name("name"), departName);
+        click(By.linkText("选择所属部门"));
+        driver.findElements(By.linkText("定向班四期")).get(1).click();
+//        click(By.linkText("(//a[text()='霍格沃兹学院'])[2]"));
+        click(By.linkText("确定"));
+        return this;
+    }
+
+
+    public void clearAllDeparts(){
+        searchDepart("定向班四期");
+        //todo: 删除所有的成员
+        //todo: 所有的部门
+    }
 }

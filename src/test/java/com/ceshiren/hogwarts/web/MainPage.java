@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class MainPage extends BasePage {
     void needLogin() throws IOException, InterruptedException {
         //扫码登录
         WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://work.weixin.qq.com/wework_admin/frame");
         //sleep 20
         Thread.sleep(15000);
@@ -34,7 +35,12 @@ public class MainPage extends BasePage {
         File file = new File("cookies.yaml");
         if (file.exists()) {
             //利用cookie复用session登录
-            driver = new ChromeDriver();
+
+            if(System.getenv("browser")=="chrome"){
+                driver = new ChromeDriver();
+            }else if(System.getenv("browser")=="firefox"){
+                driver=new FirefoxDriver();
+            }
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             driver.get("https://work.weixin.qq.com/wework_admin/frame");
 
