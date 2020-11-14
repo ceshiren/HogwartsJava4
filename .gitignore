@@ -33,3 +33,5 @@ hs_err_pid*
 
 # maven package default input path
 target/*
+/allure-results/
+/cookies.yaml
