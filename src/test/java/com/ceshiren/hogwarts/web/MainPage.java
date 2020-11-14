@@ -57,11 +57,15 @@ public class MainPage extends BasePage {
 
 
     public MainPage() throws IOException, InterruptedException {
+        //初始化你的selenium 复用session 打开网站
         this.beforeAll();
     }
 
     public ContactPage contact(){
+        //进入通讯录
         click(By.id("menu_contacts"));
+        //传递selenium的driver给另外一个PO
+        //po原则4 跳转或者进入新页面使用返回新的po来模拟
         return new ContactPage(driver);
     }
 }
