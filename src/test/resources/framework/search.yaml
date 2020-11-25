@@ -1,7 +1,10 @@
+#todo: 在数据驱动中再次实现参数化支持
+
 data:
 - banana
 - junit
 
+#todo: 支持page object
 steps:
   - chrome: {}
   - implicitly_wait: 5
