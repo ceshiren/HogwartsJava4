@@ -22,40 +22,44 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ParamsTest {
-    @ParameterizedTest
-    @MethodSource("stringProvider")
-    void testWithExplicitLocalMethodSource(String argument) {
-        //todo: 测试步骤
-        //todo: 测试数据
-        //todo: 断言
-        assertNotNull(argument);
-    }
-
-    static Stream<String> stringProvider() {
-        return Stream.of("apple", "banana");
-    }
+//    @ParameterizedTest
+//    @MethodSource("stringProvider")
+//    void testWithExplicitLocalMethodSource(String argument) {
+//        //todo: 测试步骤
+//        //todo: 测试数据
+//        //todo: 断言
+//        assertNotNull(argument);
+//    }
+//
+//    static Stream<String> stringProvider() {
+//        return Stream.of("apple", "banana");
+//    }
 
     @ParameterizedTest
 //    @ValueSource(strings = {"search demo1","search demo2"})
     @MethodSource()
-    void search(String keyword) {
-        //todo: 测试步骤的数据驱动
-        ChromeDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get("https://ceshiren.com");
-        driver.findElement(By.id("search-button")).click();
-        driver.findElement(By.id("search-term")).sendKeys(keyword);
+    void search(TestCase testCase) {
+        //done: 测试步骤的数据驱动
+//        ChromeDriver driver = new ChromeDriver();
+//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        driver.get("https://ceshiren.com");
+//        driver.findElement(By.id("search-button")).click();
+//        driver.findElement(By.id("search-term")).sendKeys(keyword);
+
+        System.out.println(testCase);
+        //done: runner引擎
+        testCase.run();
 
     }
 
-    static List<String> search() throws IOException {
+    static Stream<TestCase> search() throws IOException {
 //        return Stream.of("apple", "banana");
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        TypeReference typeReference = new TypeReference<List<String>>() {
-        };
-        List<String> keywords = mapper.readValue(
+//        TypeReference typeReference = new TypeReference<List<String>>() {
+//        };
+        TestCase testCase = mapper.readValue(
                 ParamsTest.class.getResourceAsStream("/framework/search.yaml"),
-                typeReference);
-        return keywords;
+                TestCase.class);
+        return Stream.of(testCase);
     }
 }
