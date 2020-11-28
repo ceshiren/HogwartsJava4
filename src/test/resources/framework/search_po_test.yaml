@@ -6,7 +6,8 @@ data:
 
 #todo: 支持page object
 steps:
-  - init: [ mainPage, com.ceshiren.hogwarts.framework.MainPage ]
+  #  - init: [ mainPage, com.ceshiren.hogwarts.framework.MainPage ]
+  - init: [ mainPage, main_po.yaml ]
   - mainPage.search: { }
 #  - searchPage: {}
 #  - seachPage.search: ${data}

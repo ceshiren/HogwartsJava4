@@ -1,8 +1,8 @@
-
-
-search:
-  - chrome: {}
+init:
+  - chrome: { }
   - implicitly_wait: 5
   - get: https://ceshiren.com
+
+search:
   - find: { id: search-button }
-  - click: {}
+  - click: { }

@@ -13,6 +13,7 @@ public class MainPage extends BasePage{
     }
     public SearchPage search(){
         //实现po 可以用java代码，也可以读取main_po.yaml
+
         return new SearchPage(driver);
     }
 

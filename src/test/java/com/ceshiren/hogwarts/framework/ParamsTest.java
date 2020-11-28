@@ -48,7 +48,7 @@ public class ParamsTest {
 //        };
         TestCase testCase = mapper.readValue(
                 ParamsTest.class.getResourceAsStream("/framework/search_po_test.yaml"),
-                SeleniumTestCase.class);
+                POTestCase.class);
         return testCase.testcaseGenerate();
 
     }
