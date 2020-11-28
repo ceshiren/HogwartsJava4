@@ -63,6 +63,14 @@ public class TestCase {
             if (step.keySet().contains("quit")) {
                 driver.quit();
             }
+
+            if (step.keySet().contains("sleep")){
+                try {
+                    Thread.sleep(Long.valueOf(getValue(step, "sleep").toString()));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
             if (step.keySet().contains("implicitly_wait")) {
                 driver.manage().timeouts().implicitlyWait(
                         (int) getValue(step, "implicitly_wait", 5), TimeUnit.SECONDS);
