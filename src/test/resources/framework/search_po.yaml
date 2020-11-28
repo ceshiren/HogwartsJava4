@@ -1,0 +1,6 @@
+
+search:
+  - find: {id: search-term}
+  - send_keys: ${data}
+  - sleep: 2
+  - quit: {}

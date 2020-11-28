@@ -1,0 +1,22 @@
+#todo: 在数据驱动中再次实现参数化支持
+
+data:
+  - banana
+  - junit
+
+#todo: 支持page object
+steps:
+  - init: [ mainPage, com.ceshiren.hogwarts.framework.MainPage ]
+  - mainPage.search: { }
+#  - searchPage: {}
+#  - seachPage.search: ${data}
+
+#  - chrome: {}
+#  - implicitly_wait: 5
+#  - get: https://ceshiren.com
+#  - find: { id: search-button }
+#  - click: {}
+#  - find: {id: search-term}
+#  - send_keys: ${data}
+#  - sleep: 2
+#  - quit: {}

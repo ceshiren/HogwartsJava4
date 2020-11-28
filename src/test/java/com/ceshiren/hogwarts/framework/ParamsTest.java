@@ -47,8 +47,8 @@ public class ParamsTest {
 //        TypeReference typeReference = new TypeReference<List<String>>() {
 //        };
         TestCase testCase = mapper.readValue(
-                ParamsTest.class.getResourceAsStream("/framework/search.yaml"),
-                TestCase.class);
+                ParamsTest.class.getResourceAsStream("/framework/search_po_test.yaml"),
+                SeleniumTestCase.class);
         return testCase.testcaseGenerate();
 
     }
