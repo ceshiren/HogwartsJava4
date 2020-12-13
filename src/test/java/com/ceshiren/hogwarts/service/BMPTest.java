@@ -42,7 +42,7 @@ public class BMPTest {
         get("/hello", (req, res) -> "Hello World");
         get("/proxy", (req, res) -> {
             BrowserMobProxy proxy = new BrowserMobProxyServer();
-            proxy.start(req.port());
+            proxy.start(Integer.valueOf(req.queryMap("port").toString()));
             return null;
         });
     }
