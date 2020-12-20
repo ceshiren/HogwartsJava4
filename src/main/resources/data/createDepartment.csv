@@ -1,0 +1,7 @@
+﻿name,name_en,returncode
+abcdefghijabcdefghijabcdefghij12,en_name,0
+abcdefghijabcdefghijabcdefghij123,en_name,60001
+\:?”<>｜,en_name,60009
+name1,abcdefghijabcdefghijabcdefghij,0
+name,abcdefghijabcdefghijabcdefghij123,40058
+name,\:?”<>｜,60009
