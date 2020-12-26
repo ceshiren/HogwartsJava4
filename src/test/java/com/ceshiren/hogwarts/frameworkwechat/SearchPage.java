@@ -1,4 +1,4 @@
-package com.ceshiren.hogwarts.framework;
+package com.ceshiren.hogwarts.frameworkwechat;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,0 +1,68 @@
+#ApiTestCaseModel
+name: departmentTestCase
+description: 部门相关，增删改查测试用例
+steps:
+  - api: tokenhelper
+    action: getToken
+    actualParameter: ["ww5ef451bf006ec894","EcEIog2OJ8AtO7PDaqt_yqHKqmYXqwSZKDhyfU1aSiU"]
+    saveGlobal:
+      accesstoken: access_token
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 1
+        reason: 'getToken错误码校验01！'
+      - actual: errcode
+        matcher: equalTo
+        expect: 2
+        reason: 'getToken错误码校验01！'
+  - api: department
+    action: createDepartment
+    actualParameter: ["子部门02${getTimeStamp}","subDepartment02${getTimeStamp}"]
+    save:
+      departmentId: id
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 1
+        reason: '创建部门校验错误码01！'
+      - actual: errcode
+        matcher: equalTo
+        expect: 2
+        reason: '创建部门校验错误码02'
+  - api: department
+    action: updateDepartment
+    actualParameter: ["${departmentId}","子部门03${getTimeStamp}","subDepartment03${getTimeStamp}"]
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 1
+        reason: '更新部门校验错误码01'
+      - actual: errcode
+        matcher: equalTo
+        expect: 2
+        reason: '更新部门校验错误码02'
+  - api: department
+    action: listDepartment
+    actualParameter: ["${departmentId}"]
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 1
+        reason: '查询部门校验错误码01'
+      - actual: errcode
+        matcher: equalTo
+        expect: 2
+        reason: '查询部门校验错误码02'
+  - api: department
+    action: deletDepartment
+    actualParameter: ["${departmentId}"]
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 1
+        reason: '删除部门校验错误码01'
+      - actual: errcode
+        matcher: equalTo
+        expect: 2
+        reason: '删除部门校验错误码02'

@@ -1,4 +1,4 @@
-package com.ceshiren.hogwarts.framework;
+package com.ceshiren.hogwarts.frameworkwechat;
 
 import java.util.ArrayList;
 import java.util.HashMap;

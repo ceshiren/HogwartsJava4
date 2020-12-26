@@ -1,4 +1,4 @@
-package com.ceshiren.hogwarts.framework;
+package com.ceshiren.hogwarts.frameworkwechat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;

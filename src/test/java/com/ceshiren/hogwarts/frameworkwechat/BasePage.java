@@ -1,4 +1,4 @@
-package com.ceshiren.hogwarts.framework;
+package com.ceshiren.hogwarts.frameworkwechat;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -6,8 +6,6 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
