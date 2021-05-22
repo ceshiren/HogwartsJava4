@@ -1,13 +1,9 @@
-package com.ceshiren.hogwarts.framework;
+package com.ceshiren.hogwarts.frameworkwechat;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class POTestCase extends TestCase {
     private ChromeDriver driver;

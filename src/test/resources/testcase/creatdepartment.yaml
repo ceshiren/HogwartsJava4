@@ -1,0 +1,25 @@
+#ApiTestCaseModel
+name: creatdepartment
+description: 初步测试创建部门用例
+steps:
+  - api: tokenhelper
+    action: getToken
+    actualParameter: ["ww5ef451bf006ec894","EcEIog2OJ8AtO7PDaqt_yqHKqmYXqwSZKDhyfU1aSiU"]
+    saveGlobal:
+      accesstoken: access_token
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 2
+        reason: 'getToken错误码校验！'
+  - api: department
+    action: createDepartment
+    actualParameter: ["部门${getTimeStamp}","Department${getTimeStamp}"]
+    save:
+      departmentId: id
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 2
+        reason: '创建部门校验错误码！'
+
