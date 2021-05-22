@@ -51,7 +51,7 @@ public class ContactClassicTest {
             TypeReference typeReference = new TypeReference<List<HashMap<String, Object>>>() {
             };
 
-            List<HashMap<String, Object>> cookies = mapper.readValue(file, typeReference);
+            List<HashMap<String, Object>> cookies = (List<HashMap<String, Object>>) mapper.readValue(file, typeReference);
             System.out.println(cookies);
 
             cookies.forEach(cookieMap -> {

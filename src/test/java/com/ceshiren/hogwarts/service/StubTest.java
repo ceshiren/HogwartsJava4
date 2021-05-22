@@ -12,14 +12,12 @@ import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMoc
 
 public class StubTest {
     static WireMockServer wireMockServer;
+
     @BeforeAll
-    public static void  beforeAll(){
+    public static void beforeAll() {
         wireMockServer = new WireMockServer(wireMockConfig().port(8089));
-
         wireMockServer.start();
-
-        configureFor("localhost",8089);
-
+        configureFor("localhost", 8089);
         System.out.println("mock server start");
     }
 
@@ -38,7 +36,7 @@ public class StubTest {
 
 
     @Test
-    void easy_Mock(){
+    void easy_Mock() {
         try {
 
 

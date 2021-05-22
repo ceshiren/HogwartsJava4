@@ -4,17 +4,11 @@ import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.BrowserMobProxyServer;
 import org.junit.jupiter.api.Test;
 import static spark.Spark.*;
-
-
 import java.io.IOException;
 
 public class BMPTest {
     @Test
     public void bmp() throws IOException {
-
-
-
-
         BrowserMobProxy proxy = new BrowserMobProxyServer();
         proxy.start(8080);
         int port = proxy.getPort(); // get the JVM-assigned port
